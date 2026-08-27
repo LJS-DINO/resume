@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game PM Portfolio | 이종서</title>
+  
+  <!-- Pretendard Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      /* Sky Blue Theme for Header / Navigation */
+      --sky-bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
+      --sky-card-bg: rgba(255, 255, 255, 0.85);
+      --sky-card-border: #7dd3fc;
+      --sky-text-title: #0369a1;
+      --sky-text-body: #0f172a;
+      --sky-text-muted: #334155;
+      --sky-accent: #0284c7;
+
+      /* Light Theme for Main Content */
+      --light-bg: #f8fafc;
+      --light-card-bg: #ffffff;
+      --light-card-border: #e2e8f0;
+      --light-card-hover: #cbd5e1;
+      --light-text-heading: #0f172a;
+      --light-text-body: #334155;
+      --light-text-muted: #64748b;
+      --navy-primary: #0284c7;
+      --navy-accent: #38bdf8;
+
+      /* Highlights */
+      --highlight-kpi-bg: #fffbeb;
+      --highlight-kpi-border: #fde68a;
+      --highlight-kpi-accent: #f59e0b;
+      --highlight-kpi-title: #b45309;
+      --highlight-kpi-text: #92400e;
+
+      --highlight-system-bg: #f0f9ff;
+      --highlight-system-border: #38bdf8;
+      --highlight-system-text: #0369a1;
+
+      --max-width: 1040px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--light-bg);
+      color: var(--light-text-body);
+      line-height: 1.6;
+      padding-top: 70px;
+    }
+
+    /* Top Sticky Navigation Bar (Sky Blue Theme) */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: rgba(224, 242, 254, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(186, 230, 253, 0.9);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(186, 230, 253, 0.4);
+    }
+
+    .nav-container {
+      width: 100%;
+      max-width: var(--max-width);
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #0369a1;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo span {
+      color: #0284c7;
+      font-size: 0.85rem;
+      font-weight: 700;
+      background: #ffffff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid #bae6fd;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 6px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #0f172a;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: #0284c7;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .nav-link.nav-cta {
+      background: #0284c7;
+      color: #ffffff;
+      margin-left: 6px;
+    }
+
+    .nav-link.nav-cta:hover {
+      background: #0369a1;
+      color: #ffffff;
+    }
+
+    /* Top Sky Blue Hero Wrapper */
+    .hero-wrapper {
+      background: var(--sky-bg-gradient);
+      padding: 60px 20px 80px 20px;
+      border-bottom: 1px solid #bae6fd;
+    }
+
+    .hero-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* Header / Hero Section */
+    header {
+      background: var(--sky-card-bg);
+      border: 1px solid var(--sky-card-border);
+      border-left: 6px solid #0284c7;
+      border-radius: 16px;
+      padding: 40px 36px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 25px rgba(2, 132, 199, 0.12);
+      scroll-margin-top: 90px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: #e0f2fe;
+      border: 1px solid #7dd3fc;
+      border-radius: 20px;
+      color: #0369a1;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-name-group {
+      margin-bottom: 20px;
+    }
+
+    .hero-name-kr {
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .hero-name-en {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #0284c7;
+      letter-spacing: 0.06em;
+      margin-top: 6px;
+      text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: #0369a1;
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+
+    .hero-desc {
+      font-size: 0.98rem;
+      color: #1e293b;
+      line-height: 1.8;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    /* Keyword Chips (Sky Blue Palette) */
+    .keyword-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      background: #ffffff;
+      border: 1px solid #7dd3fc;
+      color: #0369a1;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(186, 230, 253, 0.4);
+      transition: all 0.2s ease;
+    }
+
+    .chip:hover {
+      border-color: #0284c7;
+      background: #0284c7;
+      color: #ffffff;
+    }
+
+    /* Stats Section */
+    .hero-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: #ffffff;
+      border: 1px solid #bae6fd;
+      border-radius: 12px;
+      padding: 26px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.1);
+    }
+
+    .stat-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+    }
+
+    .stat-card:nth-child(1)::before { background: linear-gradient(90deg, #0284c7, #38bdf8); }
+    .stat-card:nth-child(2)::before { background: linear-gradient(90deg, #0ea5e9, #67e8f9); }
+    .stat-card:nth-child(3)::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+
+    .stat-value {
+      font-size: 2.1rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .stat-card:nth-child(1) .stat-value {
+      color: #0369a1;
+    }
+    .stat-card:nth-child(2) .stat-value {
+      color: #0284c7;
+    }
+    .stat-card:nth-child(3) .stat-value {
+      color: #d97706;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: #475569;
+      font-weight: 700;
+    }
+
+    /* Main Content Container (Light Theme) */
+    .main-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 80px 20px 60px 20px;
+    }
+
+    section {
+      margin-bottom: 90px;
+      scroll-margin-top: 90px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--light-text-heading);
+    }
+
+    .section-badge {
+      font-size: 0.75rem;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      border: 1px solid #bae6fd;
+    }
+
+    /* Core Competencies 2x2 Grid */
+    .competency-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .competency-box {
+      background: var(--light-card-bg);
+      border: 1px solid var(--light-card-border);
+      border-radius: 12px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .competency-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      border-color: #7dd3fc;
+    }
+
+    .competency-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+
+    .competency-box:nth-child(1)::before { background: linear-gradient(180deg, #0284c7, #0369a1); }
+    .competency-box:nth-child(2)::before { background: linear-gradient(180deg, #38bdf8, #0ea5e9); }
+    .competency-box:nth-child(3)::before { background: linear-gradient(180deg, #f59e0b, #d97706); }
+    .competency-box:nth-child(4)::before { background: linear-gradient(180deg, #10b981, #059669); }
+
+    .competency-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .competency-number {
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1;
+      opacity: 0.15;
+      color: #0f172a;
+      letter-spacing: -0.05em;
+    }
+
+    .competency-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--light-text-heading);
+      padding-right: 12px;
+    }
+
+    .competency-desc {
+      font-size: 0.92rem;
+      color: var(--light-text-body);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    /* Project Cards */
+    .project-card {
+      background: var(--light-card-bg);
+      border: 1px solid var(--light-card-border);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .project-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-card.featured-focus {
+      border: 1.5px solid #7dd3fc;
+      border-top: 5px solid #0284c7;
+    }
+
+    /* 블레스 이터널 배경 */
+    .project-card.bless-bg {
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.96) 0%,
+        rgba(255, 255, 255, 0.90) 58%,
+        rgba(255, 255, 255, 0.65) 100%
+      ),
+      url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gA8Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gMTAwCv/bAEMAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/bAEMBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/AABEIAWkCWAMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gA2EAAcAAQAG...');
+      background-size: cover;
+      background-position: right center;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--light-text-heading);
+    }
+
+    .project-meta {
+      font-size: 0.85rem;
+      color: var(--light-text-muted);
+      margin-top: 3px;
+      font-weight: 600;
+    }
+
+    .badge-group {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .badge-genre-subculture {
+      background: #0284c7;
+      color: #ffffff;
+    }
+
+    .badge-genre-mmo {
+      background: #0f172a;
+      color: #ffffff;
+    }
+
+    .badge-genre-casual {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .badge-metric {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+
+    .system-box {
+      background: var(--highlight-system-bg);
+      border-left: 4px solid var(--highlight-system-border);
+      padding: 10px 14px;
+      margin: 12px 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.9rem;
+      color: var(--highlight-system-text);
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+
+    .kpi-box {
+      background: var(--highlight-kpi-bg);
+      border: 1px solid var(--highlight-kpi-border);
+      border-left: 4px solid var(--highlight-kpi-accent);
+      padding: 12px 16px;
+      margin: 12px 0 16px 0;
+      border-radius: 6px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .kpi-title {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--highlight-kpi-title);
+      letter-spacing: 0.05em;
+    }
+
+    .kpi-text {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--highlight-kpi-text);
+    }
+
+    .detail-block {
+      margin-top: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .detail-title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--light-text-heading);
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .detail-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .detail-list li {
+      position: relative;
+      padding-left: 16px;
+      font-size: 0.9rem;
+      color: var(--light-text-body);
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+
+    .detail-list li::before {
+      content: "■";
+      position: absolute;
+      left: 0;
+      font-size: 0.55rem;
+      top: 6px;
+      color: #0284c7;
+    }
+
+    /* History Table */
+    .history-card {
+      background: var(--light-card-bg);
+      border: 1px solid var(--light-card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .history-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .history-table th, .history-table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--light-card-border);
+    }
+
+    .history-table th {
+      background: #f1f5f9;
+      color: var(--light-text-heading);
+      font-weight: 800;
+    }
+
+    .history-table td {
+      color: var(--light-text-body);
+    }
+
+    .history-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Career Card & Timeline */
+    .career-card {
+      background: var(--light-card-bg);
+      border: 1px solid var(--light-card-border);
+      border-radius: 12px;
+      padding: 32px 28px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--light-text-heading);
+      margin-bottom: 24px;
+    }
+
+    .timeline-container {
+      position: relative;
+      padding-left: 36px;
+      margin-top: 16px;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 13px;
+      top: 14px;
+      bottom: 24px;
+      width: 2px;
+      background: linear-gradient(180deg, #0284c7 0%, #38bdf8 50%, #10b981 100%);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 38px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-node {
+      position: absolute;
+      left: -36px;
+      top: 2px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 4px solid #0284c7;
+      z-index: 2;
+      box-shadow: 0 0 0 2px #bae6fd;
+    }
+
+    .timeline-item:nth-child(1) .timeline-node { border-color: #0284c7; }
+    .timeline-item:nth-child(2) .timeline-node { border-color: #0ea5e9; }
+    .timeline-item:nth-child(3) .timeline-node { border-color: #38bdf8; }
+    .timeline-item:nth-child(4) .timeline-node { border-color: #06b6d4; }
+    .timeline-item:nth-child(5) .timeline-node { border-color: #10b981; }
+    .timeline-item:nth-child(6) .timeline-node { border-color: #f59e0b; }
+
+    .timeline-period {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #0284c7;
+      margin-bottom: 4px;
+    }
+
+    .timeline-item:nth-child(1) .timeline-period { color: #0369a1; }
+    .timeline-item:nth-child(2) .timeline-period { color: #0284c7; }
+    .timeline-item:nth-child(3) .timeline-period { color: #0284c7; }
+    .timeline-item:nth-child(4) .timeline-period { color: #0891b2; }
+    .timeline-item:nth-child(5) .timeline-period { color: #059669; }
+    .timeline-item:nth-child(6) .timeline-period { color: #d97706; }
+
+    .timeline-company {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--light-text-heading);
+      margin-bottom: 2px;
+    }
+
+    .timeline-role {
+      font-size: 0.85rem;
+      color: var(--light-text-muted);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .timeline-projects-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+      color: var(--light-text-body);
+      line-height: 1.5;
+    }
+
+    /* Education Box */
+    .edu-card {
+      background: var(--light-card-bg);
+      border: 1px solid var(--light-card-border);
+      border-radius: 12px;
+      padding: 32px 28px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Contact Section */
+    .contact-card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 16px;
+      padding: 38px 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #0284c7, #38bdf8, #bae6fd);
+    }
+
+    .contact-header {
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .contact-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--light-text-heading);
+      margin-bottom: 6px;
+    }
+
+    .contact-subtitle {
+      font-size: 0.95rem;
+      color: var(--light-text-muted);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .contact-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .contact-item:hover {
+      border-color: #38bdf8;
+      transform: translateY(-2px);
+      background: #ffffff;
+      box-shadow: 0 6px 14px rgba(56, 189, 248, 0.15);
+    }
+
+    .contact-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: #e0f2fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: #0284c7;
+      flex-shrink: 0;
+      border: 1px solid #bae6fd;
+    }
+
+    .contact-info-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--light-text-muted);
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+
+    .contact-value {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--light-text-heading);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 30px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--light-text-muted);
+    }
+
+    @media (max-width: 860px) {
+      .nav-menu { display: none; }
+      .hero-stats-bar { grid-template-columns: 1fr; gap: 14px; }
+      .competency-grid { grid-template-columns: 1fr; gap: 16px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      section { margin-bottom: 60px; }
+    }
+
+    @media (max-width: 600px) {
+      body { padding-top: 70px; }
+      .hero-wrapper { padding: 40px 16px 50px 16px; }
+      header { padding: 24px 20px; }
+      .hero-name-kr { font-size: 2.1rem; }
+      .hero-name-en { font-size: 1.1rem; }
+      .main-container { padding: 40px 16px 30px 16px; }
+      .project-card, .career-card, .edu-card, .contact-card { padding: 20px 16px; }
+      .history-card { overflow-x: auto; }
+      .project-card.bless-bg {
+        background: var(--light-card-bg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar (Sky Blue Theme) -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#about" class="nav-logo">
+        이종서 <span>Game PM</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="#about" class="nav-link">소개</a></li>
+        <li><a href="#strengths" class="nav-link">핵심 역량</a></li>
+        <li><a href="#projects" class="nav-link">주요 프로젝트</a></li>
+        <li><a href="#archive" class="nav-link">추가 프로젝트 이력</a></li>
+        <li><a href="#experience" class="nav-link">경력 및 학력</a></li>
+        <li><a href="#contact" class="nav-link nav-cta">연락처</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 1. Top Sky Blue Area: Hero + Stats Bar -->
+  <div class="hero-wrapper">
+    <div class="hero-container">
+      <!-- Hero Section -->
+      <header id="about">
+        <div class="hero-badge">GAME BUSINESS PM PORTFOLIO</div>
+        
+        <div class="hero-name-group">
+          <h1 class="hero-name-kr">이종서</h1>
+          <div class="hero-name-en">LEE JONGSU</div>
+        </div>
+
+        <div class="hero-subtitle">서브컬처 장르 및 RPG 글로벌 라이브 서비스 포트폴리오</div>
+        
+        <p class="hero-desc">
+          데이터 기반 유저 플레이 패턴 분석 및 시스템 연계 BM 최적화 역량 보유.<br>
+          중화권 개발사 조율, 현지화 프로세스 정립 및 중국 판호 대응 완결 역량 확보.
+        </p>
+
+        <!-- Keyword Chips (방치형 RPG 변경 반영) -->
+        <div class="keyword-chips">
+          <span class="chip">사업PM</span>
+          <span class="chip">서브컬처</span>
+          <span class="chip">글로벌 서비스</span>
+          <span class="chip">모바일</span>
+          <span class="chip">BM 최적화</span>
+          <span class="chip">방치형 RPG</span>
+        </div>
+      </header>
+
+      <!-- Key Metrics / Keywords Summary -->
+      <div class="hero-stats-bar">
+        <div class="stat-card">
+          <div class="stat-value">9년+</div>
+          <div class="stat-label">사업PM 경험</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">Peak DAU 3.9만</div>
+          <div class="stat-label">냥냥시노비 Peak DAU</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">10억+</div>
+          <div class="stat-label">냥냥시노비 1.5주년 매출(글로벌)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Main Content Area: Light Theme -->
+  <div class="main-container">
+    
+    <!-- Core Competencies 2x2 Numbered Grid -->
+    <section id="strengths">
+      <div class="section-header">
+        <h2 class="section-title">핵심 역량 요약</h2>
+      </div>
+      <div class="competency-grid">
+        <!-- 01 : BM 설계 및 매출 최적화 -->
+        <div class="competency-box">
+          <div>
+            <div class="competency-header">
+              <h3 class="competency-title">BM 설계 및 매출 최적화</h3>
+              <span class="competency-number">01</span>
+            </div>
+            <p class="competency-desc">
+              장르별 유저 성향에 맞춘 BM 설계 및 론칭 초반 PUR(구매전환율) 및 ARPPU 극대화 역량 보유.
+            </p>
+          </div>
+        </div>
+
+        <!-- 02 : 캐주얼 및 서브컬처 혼합 장르 라이브 서비스 -->
+        <div class="competency-box">
+          <div>
+            <div class="competency-header">
+              <h3 class="competency-title">캐주얼 및 서브컬처 혼합 장르 라이브 서비스</h3>
+              <span class="competency-number">02</span>
+            </div>
+            <p class="competency-desc">
+              냥냥시노비, 포트리스 사가 서비스 경험을 바탕으로 장기적인 매출 지표 및 트래픽 반등 역량 보유.
+            </p>
+          </div>
+        </div>
+
+        <!-- 03 : 라이브 지표 분석 및 리텐션 개선 -->
+        <div class="competency-box">
+          <div>
+            <div class="competency-header">
+              <h3 class="competency-title">라이브 지표 분석 및 리텐션 개선</h3>
+              <span class="competency-number">03</span>
+            </div>
+            <p class="competency-desc">
+              코호트 지표 분석을 통한 성장 허들 구간 식별 및 완화, 인게임 리텐션 개선을 위한 시스템 제안을 통해 단기/장기 잔존율 및 복귀유저 유입 지표 개선.
+            </p>
+          </div>
+        </div>
+
+        <!-- 04 : 중화권 비즈니스 및 글로벌 커뮤니케이션 -->
+        <div class="competency-box">
+          <div>
+            <div class="competency-header">
+              <h3 class="competency-title">중화권 비즈니스 및 글로벌 커뮤니케이션</h3>
+              <span class="competency-number">04</span>
+            </div>
+            <p class="competency-desc">
+              통번역대학원 한중과 졸업, 중국어 전문성을 기반으로 중국 현지 개발사 기술·사업 협의, 글로벌 빌드 현지화 조율, 중국 판호 심사용 빌드 준비 및 대관 문서 작성 완결.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Projects by Genre (서브컬처/RPG 최우선 배치) -->
+    <section id="projects">
+      <div class="section-header">
+        <h2 class="section-title">주요 프로젝트</h2>
+        <span class="section-badge">서브컬처 / RPG / MMORPG / 캐주얼</span>
+      </div>
+
+      <!-- 1. 서브컬처 : 냥냥시노비 (1번 최우선 배치) -->
+      <div class="project-card featured-focus">
+        <div class="project-header">
+          <div>
+            <div class="project-name">냥냥시노비</div>
+            <div class="project-meta">쿡앱스 | 사업 PM | 2025.07 ~ 2026.04</div>
+          </div>
+          <div class="badge-group">
+            <span class="badge badge-genre-subculture">서브컬처 디펜스</span>
+            <span class="badge badge-metric">중국 판호 대응 & BM 최적화</span>
+          </div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">KEY PERFORMANCE</div>
+          <div class="kpi-text">1.5주년 시점 DAU 56% 반등 및 잔존율 7%p 개선 및 유지</div>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-title">주요 업무 및 실행 내역</span>
+          <ul class="detail-list">
+            <li>글로벌 라이브 BM 구조 고도화: 월초 매출 확보를 위한 신규 BM 패키지 기획 및 제3자 결제 도입 지원</li>
+            <li>유저 플레이 패턴 분석 기반 시스템 개선으로 복귀 유저 오가닉 유입 증대</li>
+            <li>중국 판호 획득 업무 총괄 (심사용 빌드 준비, 현지화 기술 문서 작성 및 중국 파트너사 커뮤니케이션 완결)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 2. RPG : 포트리스 사가 (2번 배치) -->
+      <div class="project-card">
+        <div class="project-header">
+          <div>
+            <div class="project-name">포트리스 사가</div>
+            <div class="project-meta">쿡앱스 | 사업 PM | 2025.07 ~ 2026.04</div>
+          </div>
+          <div class="badge-group">
+            <span class="badge badge-genre-casual">방치형 RPG</span>
+            <span class="badge badge-metric">글로벌 라이브 운영</span>
+          </div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">KEY PERFORMANCE</div>
+          <div class="kpi-text">단기 및 장기 잔존율 10%p 개선 및 유지</div>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-title">주요 업무 및 실행 내역</span>
+          <ul class="detail-list">
+            <li>글로벌 버전 라이브 서비스 운영 및 업데이트 스펙/마일스톤 관리</li>
+            <li>인게임 유저 플레이 데이터 분석 기반 신규 및 복귀 유저 잔존율(Retention) 개선 액션 수립</li>
+            <li>업데이트 전후 코호트 지표 비교 분석을 통한 장기적 LTV 유지 전략 수립</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3. MMORPG : 블레스 이터널 (3번 배치) -->
+      <div class="project-card bless-bg">
+        <div class="project-header">
+          <div>
+            <div class="project-name">블레스 이터널</div>
+            <div class="project-meta">룽투코리아 | 사업 PM | 2022.08 ~ 2022.11</div>
+          </div>
+          <div class="badge-group">
+            <span class="badge badge-genre-mmo">MMORPG</span>
+            <span class="badge badge-metric">구글 다운로드 5위</span>
+          </div>
+        </div>
+
+        <div class="system-box">
+          핵심 시스템: 던전 보스 레이드 중심의 파티 전투 MMORPG
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">KEY PERFORMANCE</div>
+          <div class="kpi-text">론칭 후 ARPPU 7만 원, PUR 7% 달성 및 유지</div>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-title">주요 업무 및 실행 내역</span>
+          <ul class="detail-list">
+            <li>국내 론칭 전체 프로세스 리딩, 마켓 정책 대응 및 론칭 체크리스트 수립</li>
+            <li>파티 레이드 안착을 위한 초반 캐릭터 레벨 제한 성장 허들 완화 및 동선/UX 최적화</li>
+            <li>중국식 충전형 구조 탈피 및 국내 유저 맞춤형 '패키지 상점'·'시나리오 패키지' 재설계를 통한 초기 매출 성능 제고</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. MMORPG : 탄성 (4번 배치) -->
+      <div class="project-card">
+        <div class="project-header">
+          <div>
+            <div class="project-name">탄성: 별을 삼킨 자</div>
+            <div class="project-meta">룽투코리아 | 사업 PM | 2020.06 ~ 2022.06</div>
+          </div>
+          <div class="badge-group">
+            <span class="badge badge-genre-mmo">MMORPG</span>
+            <span class="badge badge-metric">구글 다운로드 8위 / 일 최고 매출 1억 이상</span>
+          </div>
+        </div>
+
+        <div class="system-box">
+          핵심 시스템: 던전 보스 레이드 및 크로스 서버 PVP 중심의 전투 MMORPG
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">KEY PERFORMANCE</div>
+          <div class="kpi-text">론칭 후 ARPPU 7만 원, PUR 8% 달성 및 유지</div>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-title">주요 업무 및 실행 내역</span>
+          <ul class="detail-list">
+            <li>서버 오픈 패키지, 계정당 1회 한정 패키지 및 특가 상점 기획을 통한 론칭 초기 2개월간 매출 20위권 안착 견인</li>
+            <li>크로스 서버 PVP 경쟁 유도에 맞춘 '배틀패스' 및 '출석 패스' 도입 제안으로 유저 잔존율 및 PUR 개선</li>
+            <li>매일 금화 혜택 및 페이백 프로모션 도입을 통한 소과금 유저의 지속 결제 전환 체계 구축</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 5. Hyper Casual : 고양이와 스프 (5번 배치) -->
+      <div class="project-card">
+        <div class="project-header">
+          <div>
+            <div class="project-name">고양이와 스프</div>
+            <div class="project-meta">네오위즈 | 사업 PM | 2023.12 ~ 2025.07</div>
+          </div>
+          <div class="badge-group">
+            <span class="badge badge-genre-casual">힐링 하이퍼 캐주얼</span>
+            <span class="badge badge-metric">글로벌 롱런 서비스</span>
+          </div>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-title">주요 업무 및 실행 내역</span>
+          <ul class="detail-list">
+            <li>글로벌 서비스 라이브 운영 및 D+1 잔존율 개선을 위한 인게임 편의 시스템/이벤트 기획</li>
+            <li>안정적인 월 매출 확보를 위한 인앱 상품 밸런싱 및 프로모션 관리</li>
+            <li>중국 버전 빌드 개발 협업 커뮤니케이션 및 글로벌 IP 제휴/사업 확장 대응</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Archive -->
+    <section id="archive">
+      <div class="section-header">
+        <h2 class="section-title">추가 프로젝트 이력</h2>
+      </div>
+      <div class="history-card">
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>기간</th>
+              <th>프로젝트명</th>
+              <th>장르 / 소속</th>
+              <th>주요 수행 업무</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2023.02 ~ 2023.04</td>
+              <td><strong>브라운더스트 & 퍼즐</strong></td>
+              <td>퍼즐 RPG / 네오위즈</td>
+              <td>글로벌 론칭 전략 수립 및 유사 장르 분석 기반 BM 구조 제안</td>
+            </tr>
+            <tr>
+              <td>2019.05 ~ 2020.05</td>
+              <td><strong>열혈강호 for Kakao</strong></td>
+              <td>MMORPG / 룽투코리아</td>
+              <td>한국 서비스 전담, '매일 혜택 패키지' 도입을 통한 PUR 개선 및 원스토어 매출 순위 방어</td>
+            </tr>
+            <tr>
+              <td>2018.10 ~ 2019.02</td>
+              <td><strong>창세기전: 안타리아의 전쟁</strong></td>
+              <td>전략 SLG / 조이시티</td>
+              <td>글로벌 서비스 지원, 한방 패키지 기획 및 론칭 초기 잔존 이벤트 수립</td>
+            </tr>
+            <tr>
+              <td>2018.03 ~ 2018.09</td>
+              <td><strong>소년강호전</strong></td>
+              <td>ARPG / 루비콘삼십이프로</td>
+              <td>중국 퍼블리싱 소싱 지원, 기술 문서 번역 및 현지화 론칭 프로세스 정립</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Career Timeline & Education -->
+    <section id="experience">
+      <div class="section-header">
+        <h2 class="section-title">경력 및 학력</h2>
+      </div>
+      
+      <!-- 1. 주요 경력 타임라인 -->
+      <div class="career-card">
+        <h3 class="card-title">주요 경력 타임라인</h3>
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-period">2026.04 ~ 현재 재직 중</div>
+            <div class="timeline-company">(주)그루랩</div>
+            <div class="timeline-role">사업 PM</div>
+            <div class="timeline-projects-box">
+              신규 퍼블리싱 및 사업 전반 리드
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-period">2025.07 ~ 2026.04</div>
+            <div class="timeline-company">쿡앱스</div>
+            <div class="timeline-role">사업실 · 사업 PM</div>
+            <div class="timeline-projects-box">
+              냥냥시노비 (사업 PM & 중국 판호 대응) · 포트리스 사가 (사업 PM)
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-period">2023.01 ~ 2025.07</div>
+            <div class="timeline-company">네오위즈</div>
+            <div class="timeline-role">사업본부 · 사업 PM</div>
+            <div class="timeline-projects-box">
+              고양이와 스프 (사업 PM) · 브라운더스트 & 퍼즐 (사업 PM)
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-period">2019.05 ~ 2022.10</div>
+            <div class="timeline-company">룽투코리아</div>
+            <div class="timeline-role">사업 PM / 대리</div>
+            <div class="timeline-projects-box">
+              블레스 이터널 (사업 PM) · 탄성: 별을 삼킨 자 (사업 PM) · 열혈강호 for Kakao (사업 PM)
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-period">2018.09 ~ 2019.05</div>
+            <div class="timeline-company">조이시티</div>
+            <div class="timeline-role">사업 PM / 사원</div>
+            <div class="timeline-projects-box">
+              창세기전: 안타리아의 전쟁 (사업 PM)
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-period">2018.02 ~ 2018.09</div>
+            <div class="timeline-company">루비콘삼십이프로</div>
+            <div class="timeline-role">사업 PM & CM / 사원</div>
+            <div class="timeline-projects-box">
+              소년강호전 (사업 PM & CM)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. 학력 및 자격 -->
+      <div class="edu-card">
+        <h3 class="card-title" style="margin-bottom: 20px;">학력 및 자격</h3>
+        <ul class="detail-list">
+          <li><strong>한국외국어대학교 통번역대학원</strong><br>한중과 석사 졸업 (4.2 / 4.5)</li>
+          <li style="margin-top: 12px;"><strong>한국외국어대학교</strong><br>중국어과 학사 졸업</li>
+          <li style="margin-top: 12px;"><strong>서울고등학교</strong> 졸업</li>
+          <li style="margin-top: 12px;"><strong>중국 6년 현지 유학</strong> (초·중·고교)</li>
+          <li style="margin-top: 12px;"><strong>HSK 6급</strong> (271점)</li>
+          <li style="margin-top: 12px;"><strong>국제회의통역사</strong> / <strong>사법통역사</strong> 자격 보유</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="contact-card">
+        <div class="contact-header">
+          <h2 class="contact-title">Contact</h2>
+          <p class="contact-subtitle">새로운 프로젝트 및 비즈니스 제안을 환영합니다.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- 1. Email -->
+          <a href="mailto:leekorea0216l@naver.com" class="contact-item">
+            <div class="contact-icon-box">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="contact-info-text">
+              <span class="contact-label">EMAIL</span>
+              <span class="contact-value">leekorea0216@naver.com</span>
+            </div>
+          </a>
+
+          <!-- 2. Phone -->
+          <a href="tel:010-8286-1570" class="contact-item">
+            <div class="contact-icon-box">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="contact-info-text">
+              <span class="contact-label">PHONE</span>
+              <span class="contact-value">010-8286-1570</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 이종서 Game Business PM Portfolio. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
